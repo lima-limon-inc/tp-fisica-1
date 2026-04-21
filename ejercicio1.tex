@@ -1,0 +1,384 @@
+\section{Determinación de la Densidad de un \-Cilindro}
+
+En esta sección se presenta el proceso llevado a cabo para medir indirectamente la densidad de un cilindro.
+
+\textbf{Procedimiento experimental:}
+\begin{itemize}
+   \item Se efectuaron mediciones directas de la masa y de las dimensiones geométricas del cuerpo mediante distintos instrumentos de medición.
+
+   \item Con los valores obtenidos, se determinaron de manera indirecta el volumen y la densidad del cilindro.
+
+   \item Se evaluaron las incertidumbres asociadas a las mediciones directas y se aplicó la correspondiente propagación de errores en las magnitudes calculadas.
+
+   \item Se estableció una aproximación adecuada para la constante $\pi$, de modo que el error introducido por su recorte resultara despreciable frente a las incertezas experimentales.
+
+   \item Se compararon los resultados obtenidos con los distintos instrumentos, analizando la consistencia y compatibilidad de los valores calculados.
+
+   \item Finalmente, se expresó el valor de la densidad con su incertidumbre correspondiente y se lo contrastó con valores tabulados para inferir el posible material del cilindro.
+\end{itemize}
+
+\pagebreak
+
+\subsection{Fundamentación Teórica}
+
+Para determinar experimentalmente la densidad de un cilindro, resulta necesario establecer previamente el marco teórico correspondiente. En física, la densidad es una magnitud física que relaciona la masa de un cuerpo con el volumen que
+ocupa. Esta propiedad permite caracterizar materiales y comparar cuánta materia se encuentra contenida en un determinado volumen.
+
+Matemáticamente, la densidad se define como:
+
+\begin{equation}
+\rho = \frac{m}{V}
+\end{equation}
+
+donde $\rho$ representa la densidad del cuerpo, $m$ su masa y $V$ su volumen.
+
+A partir de la definición de densidad, para determinar esta magnitud en un cilindro resulta necesario conocer previamente su volumen.
+
+En el caso de un cilindro circular recto de radio $r$ y altura $h$, el volumen viene dado por la expresión:
+
+\begin{equation}
+V = \pi r^2 h
+\end{equation}
+
+Sin embargo, en la práctica experimental no se mide directamente el radio, sino el diámetro $d$ de la base del cilindro. Dado que ambas magnitudes se relacionan mediante:
+
+\begin{equation}
+r = \frac{d}{2}
+\end{equation}
+
+es posible reescribir la expresión del volumen en función de las magnitudes efectivamente medidas:
+
+\begin{equation}
+V = \pi \left( \frac{d}{2} \right)^2 h = \frac{\pi d^2 h}{4}
+\end{equation}
+
+De este modo, si se determina experimentalmente la masa $m$ del cilindro y se miden su diámetro $d$ y su altura $h$, la densidad puede calcularse a partir de:
+
+\begin{equation}
+\rho = \frac{m}{V} = \frac{4m}{\pi d^2 h}
+\end{equation}
+
+\subsubsection{Propagación de Errores}
+
+Dado que las magnitudes involucradas en el cálculo del volumen fueron obtenidas experimentalmente, el valor calculado no puede considerarse exacto. En efecto, tanto el diámetro, altura como la masa del cilindro presentan incertidumbres asociadas a su medición, debidas principalmente a la precisión limitada de los instrumentos empleados. Por este motivo, resulta necesario estimar cómo dichas incertezas se transfieren al valor de la densidad y volumen calculado.
+
+En este trabajo se utilizó la propagación lineal de errores, que permite obtener una estimación de la incertidumbre absoluta de una magnitud indirecta a partir de las incertidumbres de las variables medidas directamente. 
+
+\subsubsection{Propagación de Errores}
+
+Toda medición experimental lleva asociada una incertidumbre, originada en la apreciación del instrumento utilizado, en las variaciones propias del proceso de medición y en la interacción entre el sistema observado, el observador y el medio. Por este motivo, una magnitud medida no debe expresarse únicamente mediante un valor numérico, sino acompañada de la incerteza correspondiente. En general, una medición se representa de la forma:
+
+\begin{equation}
+X = X_0 \pm \Delta X \quad [\text{unidad}]
+\end{equation}
+
+donde $X_0$ es el valor representativo de la magnitud medida y $\Delta X$ es su incertidumbre absoluta.
+
+Por esto mismo, dado que las magnitudes involucradas en el cálculo del volumen y de la densidad fueron obtenidas, de manera directa o indirecta, a partir de mediciones experimentales, los valores calculados no pueden considerarse exactos. En efecto, tanto el diámetro, como la altura y la masa del cilindro presentan incertidumbres asociadas a su determinación. Por este motivo, resulta necesario estimar cómo dichas incertezas se transfieren a las magnitudes calculadas.
+
+En este trabajo se utilizó la propagación lineal de errores, que permite obtener una estimación de la incertidumbre absoluta de una magnitud indirecta a partir de las incertidumbres de las variables medidas directamente.
+
+\subsubsection{Propagación de errores en la densidad}
+
+Empezamos con el objetivo de este ejercicio el cual es determinar la densidad del cilindro.
+La densidad viene dada por la expresión:
+
+\begin{equation}
+\rho = \frac{m}{V}
+\end{equation}
+
+donde $m$ es la masa del cilindro y $V$ su volumen. Como ambas cantidades provienen, de manera directa o indirecta, de mediciones experimentales, el valor obtenido para la densidad no será exacto, sino que estará acompañado por una incertidumbre asociada.
+
+Aplicando el método de propagación lineal de errores, la incertidumbre absoluta de la densidad puede estimarse a partir de:
+
+\begin{equation}
+\frac{\partial \rho}{\partial m} = \frac{1}{V},
+\qquad
+\frac{\partial \rho}{\partial V} = -\frac{m}{V^2}
+\end{equation}
+
+Por lo tanto:
+
+\begin{equation}
+\Delta \rho_{\text{lineal}} \approx
+\left| \frac{\partial \rho}{\partial m} \right| \Delta m
++
+\left| \frac{\partial \rho}{\partial V} \right| \Delta V
+\end{equation}
+
+y reemplazando las derivadas parciales obtenidas:
+
+\begin{equation}
+\Delta \rho_{\text{lineal}} \approx
+\frac{1}{V}\,\Delta m
++
+\frac{m}{V^2}\,\Delta V
+\end{equation}
+
+En esta expresión, $\Delta \rho_{\text{lineal}}$ representa la incertidumbre absoluta asociada a la densidad, mientras que $\Delta m$ y $\Delta V$ corresponden a las incertidumbres absolutas de la masa y del volumen, respectivamente.
+
+Ahora bien, para poder calcular la incertidumbre en la densidad, es necesario conocer previamente la incertidumbre asociada al volumen. Esto se debe a que el volumen no se mide de forma directa, sino que se calcula a partir de otras magnitudes experimentales, en este caso el diámetro y la altura del cilindro.
+
+\subsubsection{Propagación de errores en el volumen}
+
+El volumen del cilindro se determina mediante la siguiente expresión:
+
+\begin{equation}
+V = \pi \frac{d^2}{4} h
+\end{equation}
+
+donde $d$ es el diámetro y $h$ la altura del cilindro. Como ambas magnitudes son medidas experimentalmente, el volumen calculado también tendrá asociada una incertidumbre.
+
+Aplicando nuevamente el método de propagación lineal de errores, se obtienen las derivadas parciales:
+
+\begin{equation}
+\frac{\partial V}{\partial \pi} = \frac{d^2}{4}h,
+\qquad
+\frac{\partial V}{\partial d} = \pi \frac{d}{2}h,
+\qquad
+\frac{\partial V}{\partial h} = \pi \frac{d^2}{4}
+\end{equation}
+
+Por lo tanto, la incertidumbre absoluta del volumen puede expresarse como:
+
+\begin{equation}
+\Delta V_{\text{lineal}} \approx 
+\left| \frac{\partial V}{\partial \pi} \right| \Delta \pi
++
+\left| \frac{\partial V}{\partial d} \right| \Delta d
++
+\left| \frac{\partial V}{\partial h} \right| \Delta h
+\end{equation}
+
+y, reemplazando por las derivadas parciales correspondientes:
+
+\begin{equation}
+\Delta V_{\text{lineal}} \approx
+\frac{d^2}{4} h\, \Delta \pi
++
+\pi \frac{d}{2} h\, \Delta d
++
+\pi \frac{d^2}{4} \Delta h
+\end{equation}
+
+En esta expresión, $\Delta V_{\text{lineal}}$ representa la incertidumbre absoluta asociada al volumen calculado, mientras que $\Delta d$, $\Delta h$ y $\Delta \pi$ representan las incertidumbres absolutas de las magnitudes involucradas. En particular, $\Delta d$ y $\Delta h$ se estiman a partir de la apreciación de los instrumentos utilizados en la medición.
+
+
+\subsection{Consideraciones sobre las mediciones}
+
+Para la determinación experimental de la densidad del cilindro se recurrió a mediciones directas de masa y dimensiones geométricas, y se dispuso además de un método complementario de estimación del volumen por desplazamiento de agua. A partir de estos datos se calcularon de manera indirecta el volumen y la densidad del cuerpo, teniendo en cuenta las incertidumbres asociadas a cada instrumento de medición.
+
+Los materiales e instrumentos utilizados en la experiencia fueron los siguientes:
+
+\begin{itemize}
+    \item \textbf{Calibre Vernier:} apreciación de $0{,}02\ \mathrm{mm}$.
+    \item \textbf{Regla milimetrada:} apreciación de $1\ \mathrm{mm}$.
+    \item \textbf{Regla de madera:} apreciación de $1\ \mathrm{cm}$ ($10\ \mathrm{mm}$).
+    \item \textbf{Probeta graduada:} apreciación de $1\ \mathrm{mL}$.
+    \item \textbf{Balanza electrónica:} apreciación de $0{,}5\ \mathrm{g}$.
+    \item \textbf{Cilindro macizo metálico:} cuerpo en estudio.
+    \item \textbf{Agua:} empleada para la determinación del volumen por desplazamiento.
+\end{itemize}
+
+El procedimiento experimental se desarrolló considerando los siguientes aspectos:
+
+\begin{itemize}
+    \item \textbf{Medición de la masa:} La masa del cilindro se obtuvo mediante una balanza electrónica con apreciación de $0{,}5\ \mathrm{g}$. En consecuencia, esta magnitud también presenta una incertidumbre asociada, que debe contemplarse al momento de propagar errores en el cálculo de la densidad.
+
+    \item \textbf{Medición de la altura y del diámetro:} Las dimensiones del cilindro se determinaron mediante mediciones directas utilizando instrumentos de distinta precisión, en particular el calibre Vernier y la regla milimetrada. La comparación entre ambos permitió analizar cómo la resolución del instrumento influye en la incertidumbre final de las magnitudes calculadas. Además, se contó con una regla de madera, cuya menor precisión la vuelve útil principalmente como referencia comparativa.
+
+    \item \textbf{Determinación del volumen:} El volumen del cilindro pudo obtenerse de manera indirecta a partir de sus dimensiones geométricas, y también contrastarse con una medición por desplazamiento de agua utilizando una probeta graduada. Este segundo procedimiento permitió disponer de una referencia experimental adicional para el análisis de resultados.
+
+    \item \textbf{Estimación de incertidumbres:} Las incertidumbres de las mediciones directas se asociaron a la apreciación de cada instrumento. De este modo, las mediciones de longitud quedaron afectadas por la resolución del calibre o de las reglas utilizadas, mientras que las mediciones de masa y volumen por desplazamiento quedaron condicionadas por la apreciación de la balanza y de la probeta, respectivamente.
+
+    \item \textbf{Principales fuentes de error:} Entre los factores que pueden afectar la calidad de las mediciones se encuentran la lectura de la escala, la correcta alineación del instrumento con el cuerpo, las posibles irregularidades de la superficie del cilindro, la limitada resolución de algunos instrumentos y, en el caso del método por desplazamiento, la dificultad para apreciar con exactitud el nivel del menisco en la probeta.
+
+    \item \textbf{Aproximación de la constante $\pi$:} En el cálculo geométrico del volumen interviene la constante $\pi$, por lo que fue necesario adoptar una aproximación decimal adecuada. Se eligió una cantidad de cifras tal que el error introducido por su recorte resultara despreciable frente a las incertidumbres provenientes de las mediciones experimentales. 
+    
+    Para decidir la cantidad de decimales, se compará el error relativo que se cometería al redondear $\pi$ con el error más pequeño de las mediciones directas. Se adoptó como criterio que el error por $\pi$ debía ser al menos diez veces menor que el menor error de medición.
+\end{itemize}
+
+En conjunto, este diseño experimental permitió no solo calcular la densidad del cilindro a partir de distintas mediciones, sino también evaluar la influencia que tiene la precisión instrumental sobre la confiabilidad de los resultados obtenidos.
+
+\subsection{Práctica del Laboratorio}
+
+\subsubsection{Cálculo del volumen con calibre}
+Se efectuaron mediciones con el calibre, cuya apreciación es de $0{,}02\ \mathrm{mm}$. Dado que las diferencias entre las lecturas realizadas resultaron del orden de la mínima división del instrumento o menores que ella, se adoptó como incertidumbre absoluta un valor igual a $0{,}02\ \mathrm{mm}$.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Magnitud} & \textbf{Error absoluto} & \textbf{Valor medido (cm)} & \textbf{Valor medido (m)} \\ \hline
+Diámetro $d$ & $0{,}002\ \mathrm{cm}$ & $2{,}213$ & $0{,}02213$ \\ \hline
+Altura $h$   & $0{,}002\ \mathrm{cm}$ & $ 4{,}400$ & $0{,}04400$ \\ \hline
+\end{tabular}
+\caption{Mediciones realizadas con calibre.}
+\end{table}
+
+\begin{itemize}
+    \item $D_{\text{calibre}} = 2{,}213 \pm 0{,}002\ \text{cm}$.
+    \item $H_{\text{calibre}} = 4{,}400 \pm 0{,}002\ \text{cm}$.
+\end{itemize}
+
+calculamos el volumen:
+\[
+V_{\text{calibre}} = \pi \left( \frac{2{,}213}{2} \right)^2 (4{,}400) = 16{,}92\ \text{cm}^3
+\]
+
+\[
+\Delta V_{\text{calibre}} \approx 0{,}04\ \text{cm}^3
+\qquad \Rightarrow \qquad
+\frac{\Delta V}{V} \approx 0{,}23\%
+\]
+
+\[
+V_{\text{calibre}} = 16{,}92 \pm 0{,}04 \ \text{cm}^3
+\]
+
+\subsubsection{Cálculo del volumen con regla}
+
+Se efectuaron mediciones con la regla milimetrada, cuya apreciación es de $1\ \mathrm{mm}$. Dado que las diferencias entre las lecturas realizadas resultaron del orden de la mínima división del instrumento o menores que ella, se adoptó como incertidumbre absoluta un valor igual a $1\ \mathrm{mm}$.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Magnitud} & \textbf{Error absoluto} & \textbf{Valor medido (cm)} & \textbf{Valor medido (m)} \\ \hline
+Radio $r$ & $0{,}1\ \mathrm{cm}$ & $2{,}1$ & $0{,}021$ \\ \hline
+Altura $h$ & $0{,}1\ \mathrm{cm}$ & $4{,}3$ & $0{,}043$ \\ \hline
+\end{tabular}
+\caption{Mediciones realizadas con regla milimetrada.}
+\end{table}
+
+\begin{itemize}
+    \item $R_{\text{regla}} = 2{,}1 \pm 0{,}1\ \text{cm}$.
+    \item $H_{\text{regla}} = 4{,}3 \pm 0{,}1\ \text{cm}$.
+\end{itemize}
+
+Calculamos el volumen:
+\[
+V_{\text{regla}} = \pi (2{,}1)^2 (4{,}3) = 59{,}57\ \text{cm}^3
+\]
+
+\[
+\Delta V_{\text{regla}} \approx 7{,}06\ \text{cm}^3
+\qquad \Rightarrow \qquad
+\frac{\Delta V}{V} \approx 11{,}85\%
+\]
+
+\[
+V_{\text{regla}} = 59{,}57 \pm 7{,}06\ \text{cm}^3
+\]
+
+
+\subsubsection{Cálculo del volumen con regla de madera}
+
+Se efectuaron mediciones con la regla de madera, cuya apreciación es de $1\ \mathrm{cm}$. Dado que las diferencias entre las lecturas realizadas resultaron del orden de la mínima división del instrumento o menores que ella, se adoptó como incertidumbre absoluta un valor igual a $1\ \mathrm{cm}$.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Magnitud} & \textbf{Error absoluto} & \textbf{Valor medido (cm)} & \textbf{Valor medido (m)} \\ \hline
+Radio $r$ & $1\ \mathrm{cm}$ & $2{,}0$ & $0{,}020$ \\ \hline
+Altura $h$ & $1\ \mathrm{cm}$ & $4{,}0$ & $0{,}040$ \\ \hline
+\end{tabular}
+\caption{Mediciones realizadas con regla de madera.}
+\end{table}
+
+\begin{itemize}
+    \item $R_{\text{madera}} = 2{,}0 \pm 1{,}0\ \text{cm}$.
+    \item $H_{\text{madera}} = 4{,}0 \pm 1{,}0\ \text{cm}$.
+\end{itemize}
+
+Calculamos el volumen:
+\[
+V_{\text{madera}} = \pi (2{,}0)^2 (4{,}0) = 50{,}27\ \text{cm}^3
+\]
+
+\[
+\Delta V_{\text{madera}} \approx 62{,}83\ \text{cm}^3
+\qquad \Rightarrow \qquad
+\frac{\Delta V}{V} \approx 125{,}00\%
+\]
+
+\[
+V_{\text{madera}} = 50{,}27 \pm 62{,}83\ \text{cm}^3
+\]
+
+
+
+\subsubsection{Medición de la Masa y Cálculo de la Densidad}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Instrumento} & \textbf{Error} & \textbf{Masa} \\ \hline
+Balanza & $0{,}5\ \mathrm{g}$ & $47\ \mathrm{g}$ \\ \hline
+\end{tabular}
+\caption{Medición de la masa con balanza.}
+\end{table}
+
+Masa del cilindro:
+
+\[
+m = 47 \pm 0{,}5\ \mathrm{g}
+\]
+
+\textbf{Con volumen de regla:}
+
+\[
+\rho_{\text{regla}} = \frac{47}{59{,}57} = 0{,}79\ \mathrm{g/cm^3}
+\]
+
+\[
+\Delta \rho_{\text{regla}} \approx \frac{1}{59{,}57}(0{,}5) + \frac{47}{(59{,}57)^2}(7{,}06) \approx 0{,}10\ \mathrm{g/cm^3}
+\]
+
+\[
+\rho_{\text{regla}} = 0{,}79 \pm 0{,}10\ \mathrm{g/cm^3}
+\]
+
+\textbf{Con volumen de regla de madera:}
+
+\[
+\rho_{\text{madera}} = \frac{47}{50{,}27} = 0{,}93\ \mathrm{g/cm^3}
+\]
+
+\[
+\Delta \rho_{\text{madera}} \approx \frac{1}{50{,}27}(0{,}5) + \frac{47}{(50{,}27)^2}(62{,}83) \approx 1{,}18\ \mathrm{g/cm^3}
+\]
+
+\[
+\rho_{\text{madera}} = 0{,}9 \pm 1{,}2\ \mathrm{g/cm^3}
+\]
+
+\textbf{Con volumen de calibre:}
+
+\[
+\rho_{\text{calibre}} = \frac{47}{16{,}92} = 2{,}78\ \mathrm{g/cm^3}
+\]
+
+\[
+\Delta \rho_{\text{calibre}} \approx \frac{1}{16{,}92}(0{,}5) + \frac{47}{(16{,}92)^2}(0{,}04) \approx 0{,}04\ \mathrm{g/cm^3}
+\]
+
+\[
+\rho_{\text{calibre}} = 2{,}78 \pm 0{,}04\ \mathrm{g/cm^3}
+\]
+
+\subsubsection{Análisis de Resultados Preliminar}
+
+\begin{itemize}
+    \item La densidad obtenida con ambos métodos es consistente ($\approx 10{,}7\ \text{g/cm}^3$).
+    
+    \item El error relativo en el volumen es significativamente menor con el calibre ($1.45\%$ frente a $11.6\%$).
+    
+    \item El diámetro es la magnitud que más contribuye a la incerteza, pues aparece al cuadrado en la fórmula del volumen.
+\end{itemize}
+
+\textbf{Conclusión:} El calibre resulta ser el instrumento más adecuado para este tipo de medición, ya que reduce considerablemente la incerteza asociada al volumen y la densidad del cilindro.
+
+

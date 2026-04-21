@@ -1,0 +1,298 @@
+\section{Determinación de la Aceleración de la Gravedad de un Péndulo Simple}
+
+En esta segunda parte del trabajo práctico se abordó la estimación indirecta de la aceleración gravitatoria $g$ a partir del movimiento oscilatorio de un péndulo simple. La idea subyacente es aprovechar la relación funcional entre el período de oscilación y la longitud del hilo para, midiendo únicamente longitudes y tiempos, llegar al valor de una magnitud dinámica como es la gravedad. Esto resulta conveniente desde el punto de vista experimental, ya que tanto los intervalos temporales como las longitudes son accesibles con instrumentos simples de laboratorio.
+
+\textbf{Procedimiento experimental:}
+\begin{itemize}
+    \item Se armó un péndulo suspendiendo una esfera de un hilo fijado a un soporte rígido, y se midió la longitud efectiva del sistema con una regla milimetrada.
+
+    \item La esfera se liberó desde un ángulo inicial pequeño respecto a la vertical, procurando que el movimiento se desarrollara en un único plano.
+
+    \item Se cronometró con un cronómetro manual el tiempo total correspondiente a $n = 10$ oscilaciones completas, estrategia elegida para reducir el peso del error de reacción humana en el período.
+
+    \item El procedimiento se repitió para tres longitudes distintas del hilo, con el objetivo de evaluar la consistencia del modelo.
+
+    \item A partir de la expresión del período del péndulo ideal se despejó $g$ y se aplicó propagación lineal de errores para estimar la incerteza asociada.
+
+    \item Finalmente se compararon los valores obtenidos entre sí y con el valor tabulado de $g$, analizando la compatibilidad de los resultados y las principales fuentes de error.
+\end{itemize}
+
+\pagebreak
+
+\subsection{Fundamentación Teórica}
+
+\subsubsection{El Péndulo Simple y el Comportamiento Armónico}
+
+El péndulo simple es un modelo idealizado en el que una masa puntual $m$ cuelga de un hilo inextensible y sin masa, de longitud $L$, sujeto en su extremo superior a un punto fijo desde el cual puede oscilar libremente en un plano vertical bajo la acción de la gravedad. Al plantear la segunda ley de Newton sobre la dirección tangencial al arco de movimiento, se obtiene que la dinámica del sistema queda descripta por la siguiente \textbf{ecuación diferencial de movimiento}:
+
+\begin{equation}
+    \frac{d^2\theta}{dt^2} = -\frac{g}{L}\sin(\theta)
+\end{equation}
+
+donde $\theta$ es el ángulo del hilo respecto de la posición de equilibrio y $g$ la aceleración gravitatoria. La presencia del término $\sin(\theta)$ implica que, en su forma general, el movimiento pendular \textbf{no es estrictamente armónico simple}: la fuerza restauradora no es lineal en el desplazamiento angular, sino que depende de una función trigonométrica de éste.
+
+\textbf{La aproximación de pequeñas amplitudes.}
+Si la amplitud angular es lo suficientemente pequeña ($\theta \lesssim 10^\circ$), resulta válido aplicar la aproximación de primer orden obtenida por desarrollo de Taylor en torno a $\theta = 0$:
+
+\begin{equation}
+    \sin(\theta) \approx \theta \qquad (\theta \text{ en radianes})
+\end{equation}
+
+Bajo esta hipótesis, la ecuación de movimiento se simplifica a la forma característica del movimiento armónico simple (MAS):
+
+\begin{equation}
+    \frac{d^2\theta}{dt^2} = -\frac{g}{L}\,\theta
+\end{equation}
+
+\subsubsection{Transformación a Movimiento Armónico Simple (MAS)}
+
+La ecuación resultante \textbf{sí corresponde a un MAS}. Comparándola con la forma general $\ddot{x} = -\omega^2 x$, se identifica de manera inmediata que:
+
+\begin{itemize}
+    \item La aceleración angular es proporcional al desplazamiento angular.
+    \item El factor de proporcionalidad es $\omega^2 = g/L$.
+    \item La \textbf{frecuencia angular} resulta $\omega = \sqrt{g/L}$.
+\end{itemize}
+
+Esta identificación es la que permite trasladar toda la maquinaria analítica del MAS (período, frecuencia, relaciones entre magnitudes) al problema del péndulo en el régimen de pequeñas amplitudes.
+
+\subsubsection{Deducción del Período}
+
+A partir de la relación fundamental del MAS, $\omega = 2\pi/T$, se tiene:
+
+\begin{equation}
+    \omega = \frac{2\pi}{T} = \sqrt{\frac{g}{L}}
+\end{equation}
+
+Despejando el período $T$ se obtiene la expresión del \textbf{péndulo ideal}:
+
+\begin{equation}
+    T = 2\pi\sqrt{\frac{L}{g}}
+\end{equation}
+
+Esta expresión será la herramienta central del análisis: relaciona una magnitud fácilmente medible (el tiempo de oscilación) con la magnitud que interesa determinar (la aceleración de la gravedad) a través de una longitud que también es accesible experimentalmente.
+
+\subsubsection{Expresión de la gravedad}
+
+Invirtiendo la relación anterior, es decir, despejando $g$ de la ecuación del período, se obtiene la expresión que se utilizará para el cálculo experimental:
+
+\begin{equation}
+    g = \frac{4\pi^2 L}{T^2}
+    \label{eq:g_pendulo}
+\end{equation}
+
+El valor de $g$ queda expresado, entonces, como una función de dos variables independientes —la longitud del hilo y el período de oscilación— y del número irracional $\pi$, cuyas cifras se adoptarán con el criterio habitual del trabajo práctico anterior: tantas cifras como sea necesario para que su contribución al error total resulte despreciable.
+
+\subsubsection{Propagación de errores de la gravedad}
+
+Como $L$ y $T$ son magnitudes obtenidas experimentalmente, cada una con su incertidumbre asociada, el valor de $g$ calculado a partir de la ecuación~\ref{eq:g_pendulo} también arrastra una incertidumbre. Aplicando el método de propagación lineal de errores, calculamos primero las derivadas parciales:
+
+\begin{equation}
+    \frac{\partial g}{\partial L} = \frac{4\pi^2}{T^2},
+    \qquad
+    \frac{\partial g}{\partial T} = -\frac{8\pi^2 L}{T^3}
+\end{equation}
+
+De modo que la incertidumbre absoluta en $g$ se puede estimar como:
+
+\begin{equation}
+    \Delta g \approx \left|\frac{\partial g}{\partial L}\right| \Delta L + \left|\frac{\partial g}{\partial T}\right| \Delta T + \left|\frac{\partial g}{\partial \pi}\right| \Delta \pi
+\end{equation}
+
+Si se reorganiza esta expresión en términos del error relativo y se combinan los términos en cuadratura (hipótesis de errores no correlacionados), se obtiene la fórmula de trabajo habitual:
+
+\begin{equation}
+    \frac{\Delta g}{g} \approx \sqrt{\left(\frac{\Delta L}{L}\right)^2 + \left(2\,\frac{\Delta T}{T}\right)^2}
+    \label{eq:propagacion_g}
+\end{equation}
+
+donde el factor $2$ que acompaña al término temporal proviene de la dependencia cuadrática de $g$ con $T$: el error del período pesa el doble que su propio error relativo. Esta asimetría entre el peso de $\Delta L/L$ y el de $\Delta T/T$ será determinante al momento de discutir dónde conviene concentrar el esfuerzo experimental para reducir la incertidumbre en $g$.
+
+\subsubsection{Implicaciones de la Teoría y Validez}
+
+De la expresión del período del péndulo ideal se desprenden tres consecuencias que tendrán un impacto directo en el diseño de la experiencia:
+
+\begin{itemize}
+    \item \textbf{Independencia de la masa:} el período no depende de la masa $m$ de la esfera oscilante, por lo que no fue necesario medirla para determinar $g$.
+
+    \item \textbf{Independencia de la amplitud:} dentro del régimen de pequeñas oscilaciones, el período es constante respecto de la amplitud angular.
+
+    \item \textbf{Dependencia de la longitud:} el período crece con la raíz cuadrada de la longitud del hilo, monotonía que permite un chequeo cualitativo inmediato de los resultados.
+\end{itemize}
+
+La condición $\theta \leq 10^\circ$ garantiza que el error cometido al aproximar $\sin(\theta) \approx \theta$ sea inferior al $0{,}5\%$, lo cual valida la utilización de la fórmula del período ideal para fines experimentales. Si se liberara la esfera desde un ángulo considerablemente mayor, el período se apartaría de la predicción del modelo y el valor calculado de $g$ quedaría sistemáticamente subestimado (o sobrestimado, según cómo se construya la medición).
+
+\subsection{Consideraciones sobre las mediciones}
+
+\textbf{Identificación de las principales fuentes de error.}
+
+\emph{Error en la medición del tiempo ($\Delta t$).} El uso de un cronómetro manual introduce un error sistemático asociado al tiempo de reacción humana, típicamente estimado entre $0{,}2\ \mathrm{s}$ y $0{,}3\ \mathrm{s}$. A los fines del análisis preliminar se adoptó el valor conservador $\Delta t = 0{,}2\ \mathrm{s}$.
+
+\emph{Propagación al cálculo de $g$.} Partiendo de la ecuación~\ref{eq:g_pendulo} y aplicando la expresión~\ref{eq:propagacion_g}, con el error en $\pi$ despreciable, se tiene:
+
+\begin{equation}
+    \frac{\Delta g}{g} \approx \sqrt{\left(\frac{\Delta L}{L}\right)^2 + \left(2\,\frac{\Delta T}{T}\right)^2}
+\end{equation}
+
+\textbf{Análisis cuantitativo del error inicial.} Consideremos un escenario típico \textbf{sin corrección}:
+
+\begin{itemize}
+    \item Longitud: $L = 1{,}00\ \mathrm{m}$ con $\Delta L = 0{,}01\ \mathrm{m}$  $\rightarrow$ error relativo $\approx 1\%$.
+    \item Período: $T = 2{,}0\ \mathrm{s}$ con $\Delta T = 0{,}2\ \mathrm{s}$  $\rightarrow$ error relativo $\approx 10\%$.
+\end{itemize}
+
+Introduciendo estos valores en la fórmula de propagación se obtiene:
+
+\[
+\frac{\Delta g}{g} \approx 0{,}21
+\]
+
+\textbf{Resultado:} con esta configuración el error total sería del orden del $21\%$, una cifra diez veces mayor al $2\%$ buscado. El cuello de botella está claramente en la medición temporal.
+
+\textbf{Estrategia experimental para reducir el error.}
+
+\emph{Amortiguación del error temporal.} Dado que, para pequeñas oscilaciones, el período es independiente del número de vueltas que complete el péndulo, en lugar de cronometrar una única oscilación conviene cronometrar el tiempo total $t$ de $n$ oscilaciones consecutivas. El período se obtiene luego dividiendo por $n$, y el error absoluto del período queda dividido por el mismo factor:
+
+\begin{equation}
+    T = \frac{t}{n}, \qquad \Delta T = \frac{\Delta t}{n}
+\end{equation}
+
+donde $\Delta t$ sigue siendo el error del cronómetro ($0{,}2\ \mathrm{s}$). Cuanto mayor sea $n$, más pequeño se vuelve $\Delta T$ y menor la contribución temporal al error total de $g$.
+
+\textbf{Conclusión del diseño:} el análisis anterior confirma que, midiendo el tiempo de múltiples oscilaciones, es posible reducir sustancialmente el error $\Delta T$, volviendo alcanzable el objetivo del $2\%$ en la determinación de $g$. En este trabajo se adoptó $n = 10$, que reduce el error relativo temporal aproximadamente en un factor $10$.
+
+En cuanto a la longitud $L$, la apreciación nominal de la regla es de $1\ \mathrm{mm}$, pero en la práctica el error relevante es sensiblemente mayor. A la dificultad natural de leer la escala se suman al menos tres efectos: la identificación aproximada del centro geométrico de la esfera (que es donde termina, conceptualmente, la longitud efectiva del péndulo), la posible inclinación del hilo durante la medición y las pequeñas flexiones en el punto de suspensión. Por esos motivos se adoptó, como cota superior del error, $\Delta L = 1\ \mathrm{cm}$, valor más conservador pero representativo de la precisión efectiva del procedimiento.
+
+\subsection{Práctica del Laboratorio}
+
+Se realizaron tres mediciones con distintas longitudes del hilo. En todos los casos se mantuvieron fijos el número de oscilaciones por medición ($n = 10$) y la amplitud angular inicial, ajustada en aproximadamente $10^\circ$ respecto de la vertical (lectura de $80^\circ$ sobre la escala del transportador alineada con la horizontal), de modo de operar dentro del rango de validez de la aproximación armónica. Para cada longitud se registraron el instante de inicio del cronómetro y el instante en que se completaba la décima oscilación; la diferencia entre ambos valores corresponde al tiempo total $t$ cronometrado.
+
+\subsubsection{Primer Experimento}
+
+\textbf{Medición de la Longitud ($L_1$).} La primera experiencia se llevó adelante con la longitud de hilo más grande de las disponibles. La medición con regla milimetrada, considerando las dificultades prácticas ya discutidas, arrojó:
+
+\[
+L_1 = 0{,}887 \pm 0{,}01\ \mathrm{m}
+\]
+
+\textbf{Medición del Período ($T_1$).} Se mantuvieron fijos el ángulo inicial ($\alpha \approx 10^\circ$) y la cantidad de oscilaciones ($n = 10$).
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Magnitud} & \textbf{Valor medido} & \textbf{Error absoluto} \\ \hline
+Tiempo inicial   & $1{,}74\ \mathrm{s}$  & $0{,}2\ \mathrm{s}$  \\ \hline
+Tiempo final     & $20{,}91\ \mathrm{s}$ & $0{,}2\ \mathrm{s}$  \\ \hline
+\end{tabular}
+\caption{Mediciones temporales del primer experimento ($n = 10$ oscilaciones).}
+\end{table}
+
+El tiempo total cronometrado resulta:
+
+\[
+t_1 = 20{,}91 - 1{,}74 = 19{,}17\ \mathrm{s}, \qquad \Delta t_1 = 0{,}2\ \mathrm{s}
+\]
+
+y, en consecuencia, el período y su incertidumbre:
+
+\[
+T_1 = \frac{t_1}{n} = 1{,}917\ \mathrm{s},
+\qquad
+\Delta T_1 = \frac{\Delta t_1}{n} = 0{,}02\ \mathrm{s}
+\]
+
+\subsubsection{Segundo Experimento}
+
+\textbf{Medición de la Longitud ($L_2$).} Se acortó el hilo y se midió nuevamente con el mismo criterio:
+
+\[
+L_2 = 0{,}662 \pm 0{,}01\ \mathrm{m}
+\]
+
+\textbf{Medición del Período ($T_2$).} Se repitió el procedimiento conservando $\alpha \approx 10^\circ$ y $n = 10$.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Magnitud} & \textbf{Valor medido} & \textbf{Error absoluto} \\ \hline
+Tiempo inicial   & $2{,}28\ \mathrm{s}$  & $0{,}2\ \mathrm{s}$  \\ \hline
+Tiempo final     & $19{,}04\ \mathrm{s}$ & $0{,}2\ \mathrm{s}$  \\ \hline
+\end{tabular}
+\caption{Mediciones temporales del segundo experimento ($n = 10$ oscilaciones).}
+\end{table}
+
+De donde:
+
+\[
+t_2 = 19{,}04 - 2{,}28 = 16{,}76\ \mathrm{s},
+\qquad
+T_2 = 1{,}676\ \mathrm{s},
+\qquad
+\Delta T_2 = 0{,}02\ \mathrm{s}
+\]
+
+\subsubsection{Tercer Experimento}
+
+\textbf{Medición de la Longitud ($L_3$).} Para la última configuración se preparó el sistema con la longitud más corta de las tres:
+
+\[
+L_3 = 0{,}302 \pm 0{,}01\ \mathrm{m}
+\]
+
+\textbf{Medición del Período ($T_3$).} Por una limitación de tiempo durante la sesión de laboratorio, no llegaron a registrarse los instantes de inicio y fin del cronómetro para esta configuración. En consecuencia, la experiencia quedó incompleta: el valor de $L_3$ se documenta únicamente como registro del intento realizado, y no se dispone de un $T_3$ ni, por ende, de un $g_3$ para incorporar al cálculo posterior. Esta carencia se retomará explícitamente en el análisis de resultados.
+
+\subsubsection{Resultados con incerteza}
+
+Aplicando la ecuación~\ref{eq:g_pendulo} a los dos experimentos completos:
+
+\[
+g_1 = \frac{4\pi^2 \cdot 0{,}887}{(1{,}917)^2} \approx 9{,}53\ \mathrm{m/s^2}
+\]
+
+\[
+g_2 = \frac{4\pi^2 \cdot 0{,}662}{(1{,}676)^2} \approx 9{,}30\ \mathrm{m/s^2}
+\]
+
+Aplicando la ecuación~\ref{eq:propagacion_g} con $\Delta L = 0{,}01\ \mathrm{m}$ y $\Delta T = 0{,}02\ \mathrm{s}$:
+
+\[
+\frac{\Delta g_1}{g_1} \approx \sqrt{\left(\frac{0{,}01}{0{,}887}\right)^2 + \left(2\cdot\frac{0{,}02}{1{,}917}\right)^2} \approx 0{,}024
+\quad\Longrightarrow\quad
+\Delta g_1 \approx 0{,}2\ \mathrm{m/s^2}
+\]
+
+\[
+\frac{\Delta g_2}{g_2} \approx \sqrt{\left(\frac{0{,}01}{0{,}662}\right)^2 + \left(2\cdot\frac{0{,}02}{1{,}676}\right)^2} \approx 0{,}028
+\quad\Longrightarrow\quad
+\Delta g_2 \approx 0{,}3\ \mathrm{m/s^2}
+\]
+
+Los valores, expresados con su incertidumbre, son:
+
+\[
+g_1 = 9{,}5 \pm 0{,}2\ \mathrm{m/s^2},
+\qquad
+g_2 = 9{,}3 \pm 0{,}3\ \mathrm{m/s^2}
+\]
+
+Como ambos intervalos de incertidumbre tienen intersección no nula, los resultados son compatibles entre sí y pueden combinarse en un único valor representativo mediante un promedio ponderado por $w_i = 1/\Delta g_i^2$:
+
+\[
+\bar{g} \approx 9{,}4 \pm 0{,}2\ \mathrm{m/s^2}
+\]
+
+\subsubsection{Análisis de Resultados Preliminar}
+
+\begin{itemize}
+    \item \textbf{Precisión:} el valor representativo obtenido ($\bar{g} \approx 9{,}4\ \mathrm{m/s^2}$) presenta un error relativo de $\dfrac{|9{,}4 - 9{,}81|}{9{,}81} \times 100\% \approx 4{,}2\%$ respecto del valor tabulado de $9{,}81\ \mathrm{m/s^2}$. Esto supera el objetivo del $2\%$ planteado en la guía, aunque el intervalo de incertidumbre roza el valor teórico.
+
+    \item \textbf{Consistencia:} los dos experimentos con datos completos arrojan valores de $g$ compatibles entre sí dentro del error ($9{,}5\ \mathrm{m/s^2}$ y $9{,}3\ \mathrm{m/s^2}$), lo que sugiere que el procedimiento es reproducible dentro de la precisión del instrumental.
+
+    \item \textbf{Tendencia:} se observa una leve disminución de $g$ al acortar la longitud del péndulo, comportamiento esperable si se considera que el error relativo en $L$ crece a medida que $L$ disminuye y adquiere más peso frente al término temporal; también puede deberse a que la aproximación de masa puntual se vuelve menos adecuada a medida que la longitud del hilo se acerca al tamaño de la esfera.
+
+    \item \textbf{Fuente dominante de error:} en ambas mediciones, la contribución temporal ($2\Delta T/T$) domina levemente sobre la contribución en longitud ($\Delta L/L$). Reducir $\Delta T$, ya sea aumentando $n$ o empleando un cronómetro electrónico accionado por sensor, impactaría directamente y en mayor medida sobre la calidad del resultado final.
+
+    \item \textbf{Limitaciones de la experiencia:} la falta de registro temporal para $L_3$ impidió disponer de una tercera medición independiente, que hubiera permitido, por ejemplo, un ajuste por regresión lineal sobre $T^2$ en función de $L$, alternativa teóricamente más robusta para estimar $g$. Adicionalmente, cada longitud se midió con una única tanda de $10$ oscilaciones, sin repeticiones, por lo que no es posible acotar cuantitativamente la dispersión estadística entre mediciones sucesivas.
+\end{itemize}
