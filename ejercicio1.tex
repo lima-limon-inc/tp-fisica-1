@@ -27,7 +27,7 @@ ocupa. Esta propiedad permite caracterizar materiales y comparar cuánta materia
 Matemáticamente, la densidad se define como:
 
 \begin{equation}
-\rho = \frac{m}{V}
+\rho = \frac{m}{V} \label{eq:densidad}
 \end{equation}
 
 donde $\rho$ representa la densidad del cuerpo, $m$ su masa y $V$ su volumen.
@@ -60,12 +60,6 @@ De este modo, si se determina experimentalmente la masa $m$ del cilindro y se mi
 
 \subsubsection{Propagación de Errores}
 
-Dado que las magnitudes involucradas en el cálculo del volumen fueron obtenidas experimentalmente, el valor calculado no puede considerarse exacto. En efecto, tanto el diámetro, altura como la masa del cilindro presentan incertidumbres asociadas a su medición, debidas principalmente a la precisión limitada de los instrumentos empleados. Por este motivo, resulta necesario estimar cómo dichas incertezas se transfieren al valor de la densidad y volumen calculado.
-
-En este trabajo se utilizó la propagación lineal de errores, que permite obtener una estimación de la incertidumbre absoluta de una magnitud indirecta a partir de las incertidumbres de las variables medidas directamente. 
-
-\subsubsection{Propagación de Errores}
-
 Toda medición experimental lleva asociada una incertidumbre, originada en la apreciación del instrumento utilizado, en las variaciones propias del proceso de medición y en la interacción entre el sistema observado, el observador y el medio. Por este motivo, una magnitud medida no debe expresarse únicamente mediante un valor numérico, sino acompañada de la incerteza correspondiente. En general, una medición se representa de la forma:
 
 \begin{equation}
@@ -84,10 +78,8 @@ Empezamos con el objetivo de este ejercicio el cual es determinar la densidad de
 La densidad viene dada por la expresión:
 
 \begin{equation}
-\rho = \frac{m}{V}
+\rho = \frac{m}{V} \tag{\ref{eq:densidad}}
 \end{equation}
-
-donde $m$ es la masa del cilindro y $V$ su volumen. Como ambas cantidades provienen, de manera directa o indirecta, de mediciones experimentales, el valor obtenido para la densidad no será exacto, sino que estará acompañado por una incertidumbre asociada.
 
 Aplicando el método de propagación lineal de errores, la incertidumbre absoluta de la densidad puede estimarse a partir de:
 
@@ -117,7 +109,7 @@ y reemplazando las derivadas parciales obtenidas:
 
 En esta expresión, $\Delta \rho_{\text{lineal}}$ representa la incertidumbre absoluta asociada a la densidad, mientras que $\Delta m$ y $\Delta V$ corresponden a las incertidumbres absolutas de la masa y del volumen, respectivamente.
 
-Ahora bien, para poder calcular la incertidumbre en la densidad, es necesario conocer previamente la incertidumbre asociada al volumen. Esto se debe a que el volumen no se mide de forma directa, sino que se calcula a partir de otras magnitudes experimentales, en este caso el diámetro y la altura del cilindro.
+Ahora bien, para poder calcular la incertidumbre en la densidad, es necesario conocer previamente la incertidumbre asociada al volumen. Esto se debe a que, como mencionamos antes, el volumen no se mide de forma directa, sino que se calcula a partir de otras magnitudes experimentales, en este caso el diámetro y la altura del cilindro.
 
 \subsubsection{Propagación de errores en el volumen}
 

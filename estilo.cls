@@ -74,7 +74,7 @@
 
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
-\rhead{\footnotesize \textsc {CherryPick: Sistema de Búsqueda \\ y Recomendación de Prendas de Ropa}} % Trabajo práctico
+\rhead{\footnotesize \textsc {Trabajo practico 1: Fisica para informaticos. \\ 1er Cuatrimestre 2026}} % Trabajo práctico
 \lhead{\includegraphics[width=2.5cm]{logo}}
 \cfoot{\small \textsc {Página \thepage\ de \pageref*{LastPage}}}
 
